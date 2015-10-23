@@ -397,7 +397,7 @@ if [ "${NO_APT_DPKG}" != "1" ]; then
     PARPREREQ='parallel'
     apt-get -y install --no-install-recommends ${PARPREREQ} >&3 2>&1 \
         || { echo "${ECHOPREFIX}apt-get cannot install ${PARPREREQ} package to look for fastest mirror so we will use the default TeX Live repository."; TLREPO='http://mirror.utexas.edu/ctan/'; }
-    PREREQS='libfile-fcntllock-perl gcc equivs libwww-perl fontconfig unzip'
+    PREREQS='libfile-fcntllock-perl gcc libwww-perl fontconfig unzip'
     apt-get -y install --no-install-recommends ${PREREQS} >&3 2>&1 \
         || { echo "${ERRORPREFIX}apt-get failed to install ${PREREQS} in $0" >&2; clean_error; }
     if [ "${HEBREW}" = "1" ]; then
